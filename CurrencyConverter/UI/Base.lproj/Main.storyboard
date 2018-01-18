@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dgl-Nh-uhO">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_VIEW_ID" id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-8B-ljb">
+                                <rect key="frame" x="16" y="159.66666666666666" width="110" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="amount" label="Amount Field"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZYv-KM-VEv"/>
+                                </connections>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50W-J9-uZ5">
+                                <rect key="frame" x="0.0" y="596" width="375" height="216"/>
+                                <accessibility key="accessibilityConfiguration" identifier="currencyPicker" label="Currency Picker">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-dV-HJS">
+                                <rect key="frame" x="265" y="159.66666666666666" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="target" label="Target"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="35" id="OSa-3i-40E"/>
+                                </constraints>
+                                <state key="normal" title="GBP"/>
+                                <connections>
+                                    <action selector="showTargetCurrencyPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOT-vZ-c4P"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPK-XE-JEB">
+                                <rect key="frame" x="182" y="164" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-7j-gkS">
+                                <rect key="frame" x="132" y="159.66666666666666" width="35" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="source" label="Source"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="tPv-ky-ha2"/>
+                                </constraints>
+                                <state key="normal" title="USD"/>
+                                <connections>
+                                    <action selector="showSourceCurrencyPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qua-rT-AIC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASZ-jP-hA4">
+                                <rect key="frame" x="164.66666666666666" y="215" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="date" label="Date"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showDatePicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cab-bc-6vN"/>
+                                </connections>
+                            </button>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-I4-MuN">
+                                <rect key="frame" x="0.0" y="596" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="537524392.41971302">
+                                    <!--2018-01-13 08:19:52 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-31626000">
+                                    <!--1999-12-31 23:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xny-kz-A2F"/>
+                                </connections>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="249" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" text="0.00" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="2BK-HP-HOC" customClass="VerticallyCenteredTextView" customModule="CurrencyConverter" customModuleProvider="target">
+                                <rect key="frame" x="208" y="153" width="57" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="value" label="Converted Value"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="qV9-dJ-KEB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OPK-XE-JEB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="0we-jn-zhg"/>
+                            <constraint firstAttribute="bottom" secondItem="50W-J9-uZ5" secondAttribute="bottom" id="38x-Ro-x3p"/>
+                            <constraint firstItem="OPK-XE-JEB" firstAttribute="leading" secondItem="fN7-7j-gkS" secondAttribute="trailing" constant="15" id="4DV-jl-PNa"/>
+                            <constraint firstItem="50W-J9-uZ5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5zV-cK-WwC"/>
+                            <constraint firstItem="2YX-I4-MuN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="83L-Wj-034"/>
+                            <constraint firstItem="50W-J9-uZ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CHz-bw-RtB"/>
+                            <constraint firstItem="ASZ-jP-hA4" firstAttribute="top" secondItem="OPK-XE-JEB" secondAttribute="bottom" constant="30" id="IVh-Nx-6R8"/>
+                            <constraint firstItem="fN7-7j-gkS" firstAttribute="leading" secondItem="JI4-8B-ljb" secondAttribute="trailing" constant="6" id="JmC-7P-BXn"/>
+                            <constraint firstAttribute="bottom" secondItem="2YX-I4-MuN" secondAttribute="bottom" id="M4B-eC-CQX"/>
+                            <constraint firstItem="OPK-XE-JEB" firstAttribute="centerY" secondItem="JI4-8B-ljb" secondAttribute="centerY" id="MVS-5C-JPj"/>
+                            <constraint firstItem="EhO-dV-HJS" firstAttribute="leading" secondItem="2BK-HP-HOC" secondAttribute="trailing" priority="251" id="WP4-IX-jJw"/>
+                            <constraint firstItem="OPK-XE-JEB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ajs-9n-afI"/>
+                            <constraint firstItem="JI4-8B-ljb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nD1-vv-G8B"/>
+                            <constraint firstItem="2BK-HP-HOC" firstAttribute="centerY" secondItem="OPK-XE-JEB" secondAttribute="centerY" id="okH-lw-3Zb"/>
+                            <constraint firstItem="2YX-I4-MuN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rDN-UV-shY"/>
+                            <constraint firstItem="EhO-dV-HJS" firstAttribute="centerY" secondItem="JI4-8B-ljb" secondAttribute="centerY" id="ubD-Gg-L7J"/>
+                            <constraint firstItem="2BK-HP-HOC" firstAttribute="leading" secondItem="OPK-XE-JEB" secondAttribute="trailing" constant="15" id="vlT-uE-ifV"/>
+                            <constraint firstItem="ASZ-jP-hA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxU-cv-qe8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EhO-dV-HJS" secondAttribute="trailing" priority="250" constant="16" id="x3o-3t-mMh"/>
+                            <constraint firstItem="fN7-7j-gkS" firstAttribute="centerY" secondItem="JI4-8B-ljb" secondAttribute="centerY" id="zKX-wh-gPM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <action selector="backgroundTouch" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJu-Mt-sgq"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="JI4-8B-ljb" id="u7F-mg-Us7"/>
+                        <outlet property="convertedValueText" destination="2BK-HP-HOC" id="anN-dX-uCy"/>
+                        <outlet property="currencyPicker" destination="50W-J9-uZ5" id="kZs-e3-RKY"/>
+                        <outlet property="dateButton" destination="ASZ-jP-hA4" id="lQ4-sK-kFQ"/>
+                        <outlet property="datePicker" destination="2YX-I4-MuN" id="HT9-3J-chW"/>
+                        <outlet property="sourceButton" destination="fN7-7j-gkS" id="Tr3-er-cZR"/>
+                        <outlet property="targetButton" destination="EhO-dV-HJS" id="yBE-EP-4Wb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="35.467980295566505"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ytJ-oZ-bNE">
+            <objects>
+                <viewController storyboardIdentifier="SAD_FACE_ID" id="exK-H8-yYt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mqx-Nw-Guh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadFace" translatesAutoresizingMaskIntoConstraints="NO" id="zSd-Uz-kzZ">
+                                <rect key="frame" x="98.666666666666686" y="339" width="178" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="6m6-Uf-RSn"/>
+                                    <constraint firstAttribute="width" constant="178" id="cq5-t4-X0k"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zSd-Uz-kzZ" firstAttribute="centerY" secondItem="mqx-Nw-Guh" secondAttribute="centerY" id="Alk-hT-yGh"/>
+                            <constraint firstItem="zSd-Uz-kzZ" firstAttribute="centerX" secondItem="mqx-Nw-Guh" secondAttribute="centerX" id="vhj-15-a5q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XjU-ju-k73"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLE-XA-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="35"/>
+        </scene>
+        <!--Splash Screen Controller-->
+        <scene sceneID="EDh-tv-jBG">
+            <objects>
+                <viewController id="Dgl-Nh-uhO" customClass="SplashScreenController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8iq-c4-ItK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="jp3-NJ-ogj">
+                                <rect key="frame" x="120.66666666666669" y="316" width="134" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="A9O-bZ-Zpu"/>
+                                    <constraint firstAttribute="height" constant="180" id="O8d-oP-DLF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jp3-NJ-ogj" firstAttribute="centerY" secondItem="8iq-c4-ItK" secondAttribute="centerY" id="3ry-S3-OK6"/>
+                            <constraint firstItem="jp3-NJ-ogj" firstAttribute="centerX" secondItem="8iq-c4-ItK" secondAttribute="centerX" id="oNA-ia-8yI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S7P-YA-u7m"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdb-WK-g9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-898.39999999999998" y="34.729064039408868"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon" width="141" height="188"/>
+        <image name="sadFace" width="186" height="141"/>
+    </resources>
+</document>
