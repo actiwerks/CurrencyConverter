@@ -2,6 +2,10 @@
 Example implementation of minimalistic online currency converter for iOS with plugin online conversion API using Swift 
 programming lanuague.
 
+You can download the corresponding iOS application from the App Store using this link : 
+
+<a href="https://itunes.apple.com/us/app/convcurrency/id1337200486" rel="some text">![Foo](./AppStore.svg)</a>
+
 User can choose both source and target currency as well as desired date, conversion rate is based on online data 
 available from https://api.fixer.io/  (European Bank) but it is easy to replace this with any other online currency table
 (see Conversion.swift for details).
@@ -17,3 +21,4 @@ Network requests are handled using popular Alamofire framework (https://github.c
 integrated via CocoaPods (https://cocoapods.org). If you need help with configuring these, consult their documentation.
 
 Any comments, suggestions, ideas etc. welcome.
+
