@@ -14,7 +14,7 @@ UI is deliberately minimalistic and should work both in portrait and landscape m
 strings (besides currency names fetched from the conversion API) so application should work for international users out of the box.
 
 Network connection is required at least once (to load the latest conversion rates), should at any time the conversion rate fetching 
-for any historical date fail, the stored conversion rates are used instead. This fact is communicated to the used by dimming 
+for any historical date fail, the stored conversion rates are used instead. This fact is communicated to the user by dimming 
 and blurring the date button slightly. 
 
 Network requests are handled using popular Alamofire framework (https://github.com/Alamofire/Alamofire), 
